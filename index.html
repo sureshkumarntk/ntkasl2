@@ -1,0 +1,715 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>NTK Advanced Sciences Lab </title>
+
+<style>
+:root{
+    --primary:#0f172a;
+    --secondary:#2563eb;
+    --accent:#38bdf8;
+    --light:#f8fafc;
+    --gray:#64748b;
+    --white:#ffffff;
+    --shadow:0 10px 30px rgba(0,0,0,0.1);
+}
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Segoe UI, Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body{
+    background:var(--light);
+    color:#1e293b;
+    line-height:1.6;
+}
+
+/* =========================
+   HEADER
+========================= */
+
+.header{
+    background:var(--primary);
+    position:fixed;
+    width:100%;
+    top:0;
+    z-index:1000;
+}
+
+.navbar{
+    max-width:1200px;
+    margin:auto;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:18px 20px;
+}
+
+.logo{
+    color:white;
+    font-size:1.7rem;
+    font-weight:bold;
+}
+
+.logo span{
+    color:var(--accent);
+}
+
+.nav-links{
+    display:flex;
+    list-style:none;
+    margin:0;
+    padding:0;
+}
+    
+.nav-links li{
+    margin-left:25px;
+}
+
+.nav-links a{
+    color:white;
+    text-decoration:none;
+    transition:0.3s;
+}
+
+.nav-links a:hover{
+    color:var(--accent);
+}
+
+.menu-btn{
+    display:none;
+    color:white;
+    font-size:1.8rem;
+    cursor:pointer;
+}
+
+
+/* =========================
+   HERO
+========================= */
+.hero{
+    min-height:calc(100vh - 80px);
+    background:
+        linear-gradient(rgba(15,23,42,0.75),
+        rgba(15,23,42,0.75)),
+        url('https://images.unsplash.com/photo-1532187643603-ba119ca4109e?auto=format&fit=crop&w=1400&q=80');
+    background-size:cover;
+    background-position:center;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    text-align:center;
+    color:white;
+    padding:20px;
+}
+   
+.hero-content{
+    max-width:850px;
+}
+
+.hero h1{
+    font-size:3.8rem;
+    margin-bottom:20px;
+}
+
+.hero p{
+    font-size:1.2rem;
+    margin-bottom:30px;
+    color:#dbeafe;
+}
+
+.btn{
+    display:inline-block;
+    background:var(--secondary);
+    color:white;
+    padding:14px 30px;
+    border-radius:50px;
+    text-decoration:none;
+    transition:0.3s;
+}
+
+.btn:hover{
+    background:var(--accent);
+    transform:translateY(-2px);
+}
+
+/* =========================
+   SECTIONS
+========================= */
+section{
+    padding:90px 20px;
+}
+
+.container{
+    max-width:1200px;
+    margin:auto;
+}
+
+.section-title{
+    text-align:center;
+    margin-bottom:50px;
+}
+
+.section-title h2{
+    font-size:2.5rem;
+    color:var(--primary);
+}
+
+.section-title p{
+    color:var(--gray);
+    margin-top:10px;
+}
+
+    
+/* =========================
+   ABOUT
+========================= */
+.about{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:50px;
+    align-items:center;
+}
+
+.about img{
+    width:100%;
+    border-radius:15px;
+    box-shadow:var(--shadow);
+}
+
+.about-text h3{
+    color:var(--primary);
+    margin-bottom:15px;
+    font-size:2rem;
+}
+
+.about-text p{
+    color:var(--gray);
+    margin-bottom:15px;
+}
+
+/* =========================
+   SERVICES
+========================= */
+.services-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+    gap:25px;
+}
+
+.service-card{
+    background:white;
+    padding:30px;
+    border-radius:15px;
+    box-shadow:var(--shadow);
+    transition:0.3s;
+}
+
+.service-card:hover{
+    transform:translateY(-10px);
+}
+
+.service-icon{
+    font-size:3rem;
+    margin-bottom:15px;
+}
+
+.service-card h3{
+    margin-bottom:15px;
+    color:var(--primary);
+}
+
+.service-card p{
+    color:var(--gray);
+}
+
+/* =========================
+   STATS
+========================= */
+.stats{
+    background:var(--primary);
+    color:white;
+}
+
+.stats-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+    gap:30px;
+    text-align:center;
+}
+
+.stat h3{
+    font-size:3rem;
+    color:var(--accent);
+}
+
+.stat p{
+    margin-top:10px;
+}
+
+/* =========================
+   CTA
+========================= */
+.cta{
+    text-align:center;
+}
+
+.cta-box{
+    background:white;
+    padding:50px;
+    border-radius:20px;
+    box-shadow:var(--shadow);
+}
+
+.cta h2{
+    margin-bottom:15px;
+}
+
+.cta p{
+    color:var(--gray);
+    margin-bottom:25px;
+}
+
+/* =========================
+   FOOTER
+========================= */
+footer{
+    background:var(--primary);
+    color:white;
+    padding:50px 20px;
+}
+
+.footer-grid{
+    max-width:1200px;
+    margin:auto;
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+    gap:30px;
+}
+
+.footer h3{
+    margin-bottom:15px;
+}
+
+.footer p,
+.footer a{
+    color:#cbd5e1;
+    text-decoration:none;
+}
+
+.footer a:hover{
+    color:white;
+}
+
+.copyright{
+    text-align:center;
+    margin-top:40px;
+    border-top:1px solid rgba(255,255,255,0.15);
+    padding-top:20px;
+    color:#cbd5e1;
+}
+
+/* =========================
+   RESPONSIVE
+========================= */
+@media(max-width:768px){
+
+    .hero h1{
+        font-size:2.5rem;
+    }
+
+    .about{
+        grid-template-columns:1fr;
+    }
+
+    .nav-links{
+        position:absolute;
+        top:75px;
+        right:-100%;
+        width:250px;
+        background:var(--primary);
+        flex-direction:column;
+        padding:20px;
+        transition:0.4s;
+    }
+
+    .nav-links.active{
+        right:0;
+    }
+
+    .nav-links li{
+        margin:15px 0;
+    }
+
+    .menu-btn{
+        display:block;
+    }
+}
+</style>
+</head>
+<body>
+
+<!-- HEADER -->
+<header class="header">
+    <nav class="navbar">
+        <div class="logo"><span>NTK </span>Advanced Sciences Lab</div>
+
+        <ul class="nav-links" id="navLinks">
+            <li><a href="#">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#services">Services</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+        <div class="menu-btn" onclick="toggleMenu()">
+            ☰
+        </div>
+    </nav>
+</header>
+
+<!-- HERO -->
+<section class="hero">
+    <div class="hero-content">
+        <h1>Advancing Science Through Innovation</h1>
+        <!-- below image commented for overlap
+        <img src="https://images.unsplash.com/photo-1576086213369-97a306d36557?auto=format&fit=crop&w=1000&q=80" alt="Laboratory"> -->
+        <p>
+            Delivering world-class laboratory research,
+            advanced new materials, and scientific solutions with cutting-edge technology.
+        </p>
+        <a href="#services" class="btn">Explore Services</a>
+    </div>
+</section>
+
+<!-- ABOUT -->
+<section id="about">
+    <div class="container">
+        <div class="section-title">
+            <h2>About Our Research </h2>
+            <p>Precision, innovation, and scientific excellence.</p>
+        </div>
+
+        <div class="about">
+           
+            <img src="https://images.unsplash.com/photo-1576086213369-97a306d36557?auto=format&fit=crop&w=1000&q=80" alt="Laboratory">
+            <div class="about-text">
+                <h3>Trusted Scientific Research Partner</h3>
+
+                <p>
+                    NTK provides hybrid ceramic nano oxide and quantum materials to facilitate advanced research
+                    for Aerospace, Space Exploration, BioTechnology, Environmental Conservation and Pharmaceuticals
+                </p>
+
+                <p>
+                    Our team of scientists and researchers works with
+                    state-of-the-art facilities at leading institutions to ensure accurate,
+                    reliable, and timely results.
+                </p>
+
+                <a href="about.html" class="btn">Learn More</a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- SERVICES -->
+<section id="services">
+    <div class="container">
+
+        <div class="section-title">
+            <h2>Our Services</h2>
+            <p>Comprehensive advanced material solutions for research and industry.</p>
+        </div>
+
+        <div class="services-grid">
+
+            <div class="service-card">
+                <div class="service-icon">🧬</div>
+                <h3>Biotechnology Research</h3>
+                <p>
+                    Advanced materials for molecular biology and genetic analysis
+                    for scientific innovation.
+                </p>
+            </div>
+
+            <div class="service-card">
+                <div class="service-icon">🔬</div>
+                <h3>Analytical </h3>
+                <p>
+                    Our products facilitate Accurate testing and validation using
+                    their modern laboratory methodologies.
+                </p>
+            </div>
+
+            <div class="service-card">
+                <div class="service-icon">🌍</div>
+                <h3>Environmental Analysis</h3>
+                <p>
+                    Advanced materials for Monitoring and evaluating environmental
+                    samples with scientific precision.
+                </p>
+            </div>
+
+            <div class="service-card">
+                <div class="service-icon">💊</div>
+                <h3>Pharmaceutical Studies</h3>
+                <p>
+                    Our products helps pharmaceutical industry in new formulations developments, 
+                    Quality control, formulation testing and compliance assessments.
+                </p>
+            </div>
+<!-- code added below -->
+<section id="research">
+
+<div class="container">
+
+<div class="section-title">
+<h2>Research Areas</h2>
+<p>Advancing science through interdisciplinary research.</p>
+</div>
+
+<div class="services-grid">
+
+<div class="service-card">
+<h3>Advanced Ceramic Materials</h3>
+<p>
+Development of high-performance ceramic nano-materials
+for aerospace, defense, and industrial applications.
+</p>
+</div>
+
+<div class="service-card">
+<h3>Quantum Materials</h3>
+<p>
+Research into advanced materials exhibiting unique
+electronic, optical, and magnetic properties.
+</p>
+</div>
+
+<div class="service-card">
+<h3>Biotechnology</h3>
+<p>
+Materials and technologies supporting molecular
+biology, diagnostics, and biomedical innovation.
+</p>
+</div>
+
+<div class="service-card">
+<h3>Environmental Science</h3>
+<p>
+Solutions aimed at sustainability, pollution
+control, and environmental conservation.
+</p>
+</div>
+
+</div>
+
+</div>
+</section>
+
+          
+          <section id="technology">
+
+<div class="container">
+
+<div class="section-title">
+<h2>Core Technologies</h2>
+<p>Innovative platforms powering next-generation solutions.</p>
+</div>
+
+<div class="about-text">
+
+<h3>Hybrid Ceramic Nano Oxides</h3>
+
+<p>
+NTK develops advanced nano-oxide systems combining
+high thermal stability, mechanical strength,
+and enhanced functional performance.
+</p>
+
+<h3>Advanced Surface Engineering</h3>
+
+<p>
+Specialized material treatments improve
+durability, corrosion resistance, and
+performance in demanding environments.
+</p>
+
+<h3>Precision Material Design</h3>
+
+<p>
+Our research enables the customization of
+material properties to meet specific
+industrial and scientific requirements.
+</p>
+
+</div>
+
+</div>
+</section>
+<section id="applications">
+
+<div class="container">
+
+<div class="section-title">
+<h2>Applications</h2>
+<p>Transforming research into real-world impact.</p>
+</div>
+
+<div class="services-grid">
+
+<div class="service-card">
+<h3>✈ Aerospace</h3>
+<p>
+Lightweight high-strength materials
+for advanced aerospace systems.
+</p>
+</div>
+
+<div class="service-card">
+<h3>🚀 Space Exploration</h3>
+<p>
+Materials capable of operating
+under extreme thermal conditions.
+</p>
+</div>
+
+<div class="service-card">
+<h3>🧬 Medical Research</h3>
+<p>
+Supporting diagnostics,
+drug delivery, and biomaterials research.
+</p>
+</div>
+
+<div class="service-card">
+<h3>💊 Pharmaceuticals</h3>
+<p>
+Enhanced formulations and
+quality assurance technologies.
+</p>
+</div>
+
+<div class="service-card">
+<h3>🌎 Environmental Conservation</h3>
+<p>
+Sustainable materials and
+environmental remediation technologies.
+</p>
+</div>
+
+<div class="service-card">
+<h3>🏭 Industrial Manufacturing</h3>
+<p>
+Advanced material solutions
+for next-generation manufacturing.
+</p>
+</div>
+
+</div>
+
+</div>
+</section>
+          
+          <!-- code added above -->
+        </div>
+    </div>
+</section>
+
+<!-- STATS -->
+<section class="stats">
+    <div class="container">
+        <div class="stats-grid">
+
+            <div class="stat">
+                <h3>20+</h3>
+                <p>Years Experience</p>
+            </div>
+
+            <div class="stat">
+                <h3>500+</h3>
+                <p>Research Projects</p>
+            </div>
+
+            <div class="stat">
+                <h3>15</h3>
+                <p>Scientists</p>
+            </div>
+
+            <div class="stat">
+                <h3>98%</h3>
+                <p>Client Satisfaction</p>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+<!-- CONTACT CTA -->
+<section id="contact" class="cta">
+    <div class="container">
+        <div class="cta-box">
+            <h2>Need new materials for Scientific Testing or Research?</h2>
+
+            <p>
+                Contact our experts today to discuss your project,
+                materials requirements, and research goals.
+            </p>
+
+            <a href="mailto:sureshkumar@ntkscientificlabs.com" class="btn">
+                Contact Us
+            </a>
+        </div>
+    </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+    <div class="footer-grid">
+
+        <div>
+            <h3>NTK</h3>
+            <p>
+                Leading scientific laboratory delivering
+                innovative research and analytical solutions.
+            </p>
+        </div>
+
+        <div>
+            <h3>Quick Links</h3>
+            <p><a href="#">Home</a></p>
+            <p><a href="#about">About</a></p>
+            <p><a href="#services">Services</a></p>
+            <p><a href="#contact">Contact</a></p>
+        </div>
+
+        <div>
+            <h3>Contact</h3>
+            <p>Email: sureshkumar@ntkscientificlabs.com</p>
+            <p>Phone: +91 9742383980</p>
+            <p>Address: 515, Brahmins Street, Yelahanka, Bengaluru</p>
+        </div>
+
+    </div>
+
+    <div class="copyright">
+        © 2026 NTK Advanced Sciences Lab. All Rights Reserved.
+    </div>
+</footer>
+
+<script>
+function toggleMenu() {
+    document.getElementById("navLinks").classList.toggle("active");
+}
+
+});
+</script>
+
+</body>
+</html>
+
+51
